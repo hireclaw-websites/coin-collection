@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinCollection - Track Your Treasures</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="coin-icon">🪙</span>
+                <h1>CoinCollection</h1>
+            </div>
+            <p class="tagline">Track Your Treasures</p>
+        </header>
+
+        <main>
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <span class="stat-icon">🪙</span>
+                    <div class="stat-info">
+                        <span class="stat-value" id="totalCoins">0</span>
+                        <span class="stat-label">Total Coins</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">💰</span>
+                    <div class="stat-info">
+                        <span class="stat-value" id="totalValue">$0.00</span>
+                        <span class="stat-label">Total Value</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-icon">🌍</span>
+                    <div class="stat-info">
+                        <span class="stat-value" id="totalCountries">0</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Add Coin Form -->
+            <section class="add-coin-section">
+                <h2>Add New Coin</h2>
+                <form id="addCoinForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <input type="text" id="country" name="country" placeholder="e.g., USA, UK, Japan" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <input type="number" id="year" name="year" placeholder="e.g., 1995" min="1" max="2099" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="value">Value</label>
+                            <input type="number" id="value" name="value" placeholder="0.00" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="currency">Currency</label>
+                            <select id="currency" name="currency">
+                                <option value="$">USD ($)</option>
+                                <option value="€">EUR (€)</option>
+                                <option value="£">GBP (£)</option>
+                                <option value="¥">JPY (¥)</option>
+                                <option value="₹">INR (₹)</option>
+                                <option value="₽">RUB (₽)</option>
+                                <option value="₩">KRW (₩)</option>
+                                <option value="A$">AUD (A$)</option>
+                                <option value="C$">CAD (C$)</option>
+                                <option value="CHF">CHF</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="description">Description (Optional)</label>
+                        <input type="text" id="description" name="description" placeholder="e.g., Commemorative, Rare, Proof">
+                    </div>
+                    <button type="submit" class="btn-add">
+                        <span>+</span> Add Coin
+                    </button>
+                </form>
+            </section>
+
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <div class="filter-controls">
+                    <label for="countryFilter">Filter by Country:</label>
+                    <select id="countryFilter">
+                        <option value="all">All Countries</option>
+                    </select>
+                    <button id="clearFilter" class="btn-clear">Clear Filter</button>
+                </div>
+            </section>
+
+            <!-- Collection Grid -->
+            <section class="collection-section">
+                <h2>My Collection</h2>
+                <div id="coinGrid" class="coin-grid">
+                    <!-- Coins will be dynamically added here -->
+                </div>
+                <div id="emptyState" class="empty-state">
+                    <span class="empty-icon">🪙</span>
+                    <p>Your collection is empty</p>
+                    <p class="empty-hint">Add your first coin above to get started!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>CoinCollection &copy; 2026 - Built for collectors</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
